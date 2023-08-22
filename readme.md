@@ -9,13 +9,13 @@
 Deskripsi yang tepat mengenai format pesan digital serta aturan-aturannya dikenal sebagai protokol komunikasi. Fungsi utama dari protokol-protokol ini adalah untuk bertukar pesan antara satu sistem komputer dengan sistem komputer lainnya. Protokol-protokol ini memiliki peran penting dalam sistem telekomunikasi karena mereka secara konsisten mengirimkan dan menerima pesan-pesan. Protokol-protokol ini mencakup deteksi dan koreksi kesalahan, sinyal, dan otentikasi. Mereka juga dapat menjelaskan semantik, sintaksis, dan menggabungkan komunikasi analog dan digital.
 
 <br>
-<center>
+<p align="center">
 <img src="assets/communication-protocols.png" alt="Protocols">
 <br>
 <i>Communication Protocols</i>
-</center>
+</p>
 <br>
-
+<br>
 Implementasi dari protokol-protokol ini dapat dilakukan baik dalam perangkat keras maupun perangkat lunak. Oleh karena itu, protokol komunikasi tersedia dalam ribuan jenis yang digunakan di seluruh komunikasi analog dan digital, sehingga jaringan komputer tidak dapat ada tanpa mereka.
 
 ## Kenapa Communication Protocol Penting?
@@ -25,11 +25,12 @@ Communication Protocol membantu berbagai perangkat jaringan untuk berkomunikasi 
 ## Open System Interconnection Layer
 
 <br>
-<center>
+<p align="center">
 <img src="assets/osi.jpg" alt="OSI">
 <br>
 <i>Open System Interconnection</i>
-</center>
+</p>
+<br>
 <br>
 Pengembangan konsep OSI Layer sebenarnya ditujukan agar produsen komputer serta pengembang jaringan dan perangkat lunak dapat membuat produk yang bisa saling terhubung tanpa memaksa pengguna melakukan usaha lebih.
 
@@ -42,12 +43,14 @@ OSI Layer bekerja melewati tujuh lapisan prosedur yang berurutan. Ketika seseora
 Konsep OSI Layer memudahkan proses pencarian titik awal permasalahan, sehingga memangkas waktu yang diperlukan untuk melacak problem jaringan. Dengan begitu, usaha untuk mengatasi masalah jaringan pun berjalan lebih mudah dan singkat.
 
 ## Penjelasan OSI Layer
+
 <b>Physical Layer</b>
 Untuk mendefinisikan media transmisi jaringan, sinkronisasi bit, arsitektur jaringan (seperti Ethernet), topologi jaringan dan pengabelan. Selain itu, level ini juga mendefinisikan bagaimana Network Interface Card (NIC) dapat berinteraksi dengan media kabel atau radio. Data biner dikodekan dalam bentuk yang dapat ditransmisi melalui media jaringan, sebagai contoh kabel, transceiver dan konektor yang berkaitan dengan layer Physical. Peralatan seperti repeater, hub dan network card berada pada layer ini
 <br>
 <br>
 <b>Data-link layer</b>
 Untuk menentukan bagaimana bit-bit data dikelompokkan menjadi format yang disebut sebagai frame. Selain itu, pada level ini terjadi koreksi kesalahan, flow control, pengalamatan perangkat keras (seperti halnya Media Access Control Address (MAC Address), dan menetukan bagaimana perangkat-perangkat jaringan seperti hub, bridge, repeater, dan switch layer 2 beroperasi. Spesifikasi IEEE 802, membagi level ini menjadi dua level anak, yaitu lapisan Logical Link Control (LLC) dan lapisan Media Access Control (MAC). Fungsi LLC adalah menyiapkan sebuah pentrasmisian kembali dari kegagalan paket ketika terindikasi. Sedangkan fungsi lapisan MAC adalah mengkoordinasikan akses langsung terhadap lapisan fisik dengan tergantung metode media access controlnya, seperti Carrier Sense Multiple Access with Collision Detection (CSMA/CD), Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA).
+
 - CSMA/CD = Carrier Sense Multiple Access with Collision Detection atau sering disingkat menjadi CSMA/CD adalah sebuah metode media access control (MAC) yang digunakan oleh teknologi jaringan Ethernet. Dengan metode ini, sebuah node jaringan yang akan mengirim data ke node tujuan pertama-tama akan memastikan bahwa jaringan sedang tidak dipakai untuk transfer dari dan oleh node lainnya. Jika pada tahap pengecekan ditemukan transmisi data lain dan terjadi tabrakan (collision), maka node tersebut diharuskan mengulang permohonan (request) pengiriman pada selang waktu berikutnya yang dilakukan secara acak (random). Dengan demikian maka jaringan efektif bisa digunakan secara bergantian.
 - CSMA/CA = Carrier Sense Multiple Access/Collision Avoidance, protokol contention pada jaringan yang bisa melakukan analisa kondisi jaringan untuk menghindari collisions, tidak seperti CSMA/CD yang memakai pengaturan transmisi jaringan ketika terjadi collisions. CSMA/CA mengkonsumsi traffic karena sebelum ada data ditransmisikan ia akan mengirim sinyal broadcast pada jaringan untuk mendeteksi skenario atau kemungkinan terjadinya collision dan memerintahkan semua perangkat untuk tidak broadcast.
 
@@ -75,12 +78,14 @@ Sebagai antarmuka dengan aplikasi dengan fungsionalitas jaringan, mengatur bagai
 Meskipun dalam praktiknya kita tidak berhubungan langsung dengan model OSI, dan hanya berhubungan dengan protocol, namun model ini selalu digunakan network engineer dalam melakukan analisis dan troubleshooting jaringan komputer sehingga kita perlu memahami cara kerja model OSI.
 
 ## Fungsi OSI Secara Singkat
+
 <br>
-<center>
+<p align="center">
 <img src="assets/osi-2.png" alt="OSI-Layer" width="200">
 <br>
 <i>Open System Interconnection Layer</i>
-</center>
+</p>
+<br>
 <br>
 <b>Physical</b>: Menentukan tegangan, kecepatan, besaran fisik, dan mengalirkan bit-bit antar device.
 <br>
@@ -97,6 +102,7 @@ Meskipun dalam praktiknya kita tidak berhubungan langsung dengan model OSI, dan 
 <b>Application</b>: Menyediakan user interface.
 
 ## Cara Kerja Model OSI
+
 Informasi berawal dari layer Application. Informasi kemudian melewati layer presentation dan layer session. Pada tahap ini biasanya belum dilakukan transformasi data. Informasi yang melalui ketiga layer ini disebut PDU (Protocol Data Unit) atau data saja.
 Setelah sampai di layer Transport, data akan mengalami transformasi ke bentuk lain yang disebut segmen.
 Segmen mengalir ke layer network dan kemudian diubah menjadi packet.
@@ -106,4 +112,3 @@ Pada layer ini, bit-bit diubah menjadi besaran fisik, seperti arus listrik, gelo
 Proses pengubahan bentuk dari satu layer ke layer berikutnya dilakukan dengan menambahkan header khusus yang disebut enkapsulasi. Proses enkapsulasi terjadi berulang-ulang hingga data diubah menjadi bit-bit. Kemudian bit-bit ini dikirim ke host target melalui media jaringan.
 
 Setelah informasi (berupa bit-bit) sampai di host target maka proses kebalikannya, yaitu melepas header satu per satu dari layer terbawah hingga ke layer paling atas akan dilakukan. Proses melepas header ini disebut de-enkapsulasi.
-
