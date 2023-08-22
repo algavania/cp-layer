@@ -15,7 +15,6 @@ Deskripsi yang tepat mengenai format pesan digital serta aturan-aturannya dikena
 <i>Communication Protocols</i>
 </p>
 <br>
-<br>
 Implementasi dari protokol-protokol ini dapat dilakukan baik dalam perangkat keras maupun perangkat lunak. Oleh karena itu, protokol komunikasi tersedia dalam ribuan jenis yang digunakan di seluruh komunikasi analog dan digital, sehingga jaringan komputer tidak dapat ada tanpa mereka.
 
 ## Kenapa Communication Protocol Penting?
@@ -30,7 +29,6 @@ Communication Protocol membantu berbagai perangkat jaringan untuk berkomunikasi 
 <br>
 <i>Open System Interconnection</i>
 </p>
-<br>
 <br>
 Pengembangan konsep OSI Layer sebenarnya ditujukan agar produsen komputer serta pengembang jaringan dan perangkat lunak dapat membuat produk yang bisa saling terhubung tanpa memaksa pengguna melakukan usaha lebih.
 
@@ -85,7 +83,6 @@ Meskipun dalam praktiknya kita tidak berhubungan langsung dengan model OSI, dan 
 <br>
 <i>Open System Interconnection Layer</i>
 </p>
-<br>
 <br>
 <b>Physical</b>: Menentukan tegangan, kecepatan, besaran fisik, dan mengalirkan bit-bit antar device.
 <br>
