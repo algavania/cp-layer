@@ -36,7 +36,7 @@ Sebuah segmen TCP dapat memiliki flag (tanda-tanda) khusus yang mengindikasikan 
 
 <br>
 <p align="center">
-<img src="../assets/tcp/segmen.png" alt="Segmen TCP">
+<img src="../../assets/week-1/tcp/segmen.png" alt="Segmen TCP">
 <br>
 <i>Segmen TCP</i>
 </p>
@@ -56,7 +56,7 @@ Babak pembuatan koneksi TCP disebut juga dengan "Three-way Handshake". Tujuan me
 
 <br>
 <p align="center">
-<img src="../assets/tcp/three-way.png" alt="Three-way Handshake">
+<img src="../../assets/week-1/tcp/three-way.png" alt="Three-way Handshake">
 <br>
 <i>Three-way Handshake</i>
 </p>

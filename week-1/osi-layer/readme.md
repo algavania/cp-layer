@@ -10,7 +10,7 @@ Deskripsi yang tepat mengenai format pesan digital serta aturan-aturannya dikena
 
 <br>
 <p align="center">
-<img src="../assets/osi/communication-protocols.png" alt="Protocols">
+<img src="../../assets/week-1/osi/communication-protocols.png" alt="Protocols">
 <br>
 <i>Communication Protocols</i>
 </p>
@@ -25,7 +25,7 @@ Communication Protocol membantu berbagai perangkat jaringan untuk berkomunikasi 
 
 <br>
 <p align="center">
-<img src="../assets/osi/osi.jpg" alt="OSI">
+<img src="../../assets/week-1/osi/osi.jpg" alt="OSI">
 <br>
 <i>Open System Interconnection</i>
 </p>
@@ -79,7 +79,7 @@ Meskipun dalam praktiknya kita tidak berhubungan langsung dengan model OSI, dan 
 
 <br>
 <p align="center">
-<img src="../assets/osi/osi-2.png" alt="OSI-Layer" width="200">
+<img src="../../assets/week-1/osi/osi-2.png" alt="OSI-Layer" width="200">
 <br>
 <i>Open System Interconnection Layer</i>
 </p>
