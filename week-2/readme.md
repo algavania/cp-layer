@@ -7,6 +7,7 @@
   - [Analisis Flow Graph dari Request HTTP](#analisis-flow-graph-dari-request-http)
   - [Penjelasan Packet Counter](#penjelasan-packet-counter)
     - [Field di Packet Counter](#field-di-packet-counter)
+  - [Throughput](#throughput)
 
 ## Gambar Connection Termination Tanpa Data
 <br>
@@ -87,3 +88,16 @@ Field ini menunjukkan jumlah maksimum paket dalam satu burst. Burst adalah seran
 * Burst start
 
 Field ini menunjukkan waktu saat paket pertama dalam burst diterima.
+
+## Throughput
+Throughput adalah rata-rata jumlah data yang dapat ditransfer dari satu titik ke titik lain dalam sistem dalam periode waktu tertentu. Throughput diukur dalam satuan bit per detik (bps), kilobit per detik (kbps), megabit per detik (mbps), atau gigabit per detik (gbps).
+
+<br>
+<p align="center">
+<img src="../assets/week-2/throughput.png" alt="Throughput">
+<br>
+<i>Throughput</i>
+</p>
+<br>
+
+Kita bisa mengakses Throughput dengan cara klik Statistics -> TCP Stream Graphs -> Throughput pada toolbar Wireshark.
