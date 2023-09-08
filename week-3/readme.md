@@ -24,6 +24,13 @@
     - [Prioritization](#prioritization)
     - [Flow Control](#flow-control)
     - [Server push](#server-push)
+- [Socket Programming di C](#socket-programming-di-c)
+  - [File server.c](#file-serverc)
+    - [Kode Lengkap](#kode-lengkap)
+    - [Penjelasan Kode](#penjelasan-kode)
+  - [File client.c](#file-clientc)
+    - [Kode Lengkap](#kode-lengkap-1)
+    - [Penjelasan Kode](#penjelasan-kode-1)
 
 
 
@@ -229,3 +236,105 @@ Server tidak dapat memulai push request secara sewenang-wenang. Sebaliknya, serv
 Server mengirimkan frame PUSH_PROMISE yang menunjukkan intensi server untuk push resource ke klien, yang hanya berisi header HTTP. Klien dapat memutuskan untuk menolak push stream sepenuhnya. Setelah klien menerima frame PUSH_PROMISE, server push resource ke klien dalam frame DATA.
 
 Karena baik klien maupun server dapat membuat stream, stream yang diinisiasi oleh klien memiliki ID stream yang berangka genap, dan stream yang diinisiasi oleh server memiliki ID stream yang berangka ganjil.
+
+# Socket Programming di C
+Clone dulu projectnya di https://github.com/ferryastika/socket-programming-simple-server-and-client. Lalu kita akan memodifikasi file server.c dan client.c.
+
+## File server.c
+
+Kita harus menambahkan 
+```#include <unistd.h>```
+
+agar bisa menggunakan function read, write, exit, dsb.
+
+Setelah itu, ubah variabel port_number agar sesuai dengan port yang tersedia di network kita. Pada kasus ini, saya ubah portnya menjadi port 10001;
+
+```
+const uint16_t port_number = 10001;
+```
+
+Lalu pada function process_operation, ubah menjadi seperti ini agar server juga dapat menulis input ke client:
+```
+char* process_operation(char *input) {
+    char text[256];
+    printf("\nWrite something to client: ");
+    fgets(text, 256, stdin);
+
+    size_t n = strlen(text) * sizeof(char);
+    char *output = malloc(n);
+    memcpy(output, text, n);
+    return output;
+}
+```
+
+### Kode Lengkap
+https://gist.github.com/algavania/a6f9a9be5e0236b3b8c12bfe23e614cb
+
+### Penjelasan Kode
+Fungsi dari kode tersebut adalah untuk membuat server sederhana menggunakan socket yang bisa meng-handle banyak client. Server ini listen/mengamati port tertentu (dalam kasus ini port 10001) dan mengalihkan koneksi klien yang masuk ke child process untuk ditangani. Server ini merespons permintaan klien dan memiliki mekanisme timeout untuk menutup koneksi yang idle terlalu lama.
+
+* init_sockaddr_in: Fungsi ini digunakan untuk menginisialisasi struktur struct sockaddr_in, yang akan digunakan untuk menyimpan informasi alamat jaringan (seperti alamat IP dan nomor port) dari server.
+
+* process_operation: Fungsi ini membaca teks dari masukan standar (stdin) dan mengembalikan teks tersebut sebagai string yang dialokasikan secara dinamis.
+
+* main: Ini adalah fungsi utama dari program. Berikut adalah langkah-langkah utama yang dilakukan dalam main:
+
+  * Membuat soket (server_fd) menggunakan fungsi socket dengan domain AF_INET (IPv4) dan tipe SOCK_STREAM (untuk TCP).
+  * Menginisialisasi struktur server_sockaddr untuk alamat server dan mengikat soket server ke alamat ini menggunakan fungsi bind.
+  * Mendengarkan koneksi masuk dengan maksimal 3 antrian klien menggunakan fungsi listen.
+  * Membuat buffer untuk data yang akan diterima dan disimpan dari klien.
+  * Memulai loop utama untuk menerima koneksi klien dan mengelola setiap koneksi dalam child process terpisah.
+  
+* Child Process Handling: Setiap kali koneksi klien baru diterima, program akan melakukan fork dan membuat child process baru untuk menangani koneksi tersebut. child process kemudian melakukan langkah-langkah berikut:
+  * Menutup soket server (server_fd) dalam child process.
+  * Menerima data dari klien menggunakan read.
+  * Jika klien mengirimkan string "close", child process akan menutup koneksi dengan klien dan keluar.
+  * Jika tidak ada data yang diterima dari klien dalam waktu lebih dari 5 detik, koneksi akan ditutup karena waktu habis.
+  * Jika ada data yang diterima dari klien, data tersebut akan diproses menggunakan process_operation, dan respons akan dikirim kembali ke klien menggunakan send.
+  * Selama proses ini, waktu operasi terakhir akan dihitung untuk memeriksa apakah koneksi klien sudah idle.
+  
+* Parent Process Handling: Parent process tetap bertugas mendengarkan koneksi baru dan menerima koneksi klien. Ketika koneksi klien berhasil diterima, parent process akan langsung menutup koneksi klien ini (karena tugas menangani klien telah dialihkan ke child process).
+ 
+## File client.c
+
+Kita harus menambahkan 
+```#include <unistd.h>```
+
+agar bisa menggunakan function read, write, exit, dsb.
+
+Setelah itu, ubah variabel portno agar sesuai dengan port yang tersedia di network kita. Pada kasus ini, saya ubah portnya menjadi port 10001;
+
+```
+portno = 10001;
+```
+
+Lalu ubah variabel server agar sesuai dengan IP Address dari host kita. Di sini saya menggunakan localhost, tetapi kita juga bisa menggunakan IP teman kita yang berperan sebagai server.
+
+```
+server = gethostbyname("127.0.0.1");
+```
+
+### Kode Lengkap
+https://gist.github.com/algavania/e4af4601198ef09f9f43fd4169c76717
+
+### Penjelasan Kode
+Fungsi dari kode tersebut adalah untuk berkomunikasi dengan server melalui socket. Kode ini menghubungkan klien ke server yang berjalan di alamat IP yang sudah kita tentukan (pada kasus ini 127.0.0.1 atau localhost) pada port 10001.
+
+* Variabel-variabel: Kode ini mendefinisikan beberapa variabel yang akan digunakan dalam program, termasuk sockfd (file descriptor untuk soket), portno (nomor port yang akan digunakan untuk menghubungkan ke server), dan buffer (sebuah buffer untuk mengirim dan menerima data).
+
+* Membuat Soket: Kode ini menggunakan socket untuk membuat soket. Fungsi ini mengembalikan file descriptor yang akan digunakan untuk komunikasi jaringan. Soket yang dibuat adalah soket TCP (SOCK_STREAM) dalam domain AF_INET (IPv4).
+
+* Mendapatkan Informasi Server: Kode ini menggunakan gethostbyname untuk mendapatkan informasi tentang server yang akan dihubungi. Dalam hal ini, server yang dihubungi adalah 127.0.0.1 (localhost), sehingga kita menggunakan alamat IP tersebut.
+
+* Menginisialisasi Struktur serv_addr: Struktur serv_addr digunakan untuk menyimpan alamat server yang akan dihubungi. Kode ini mengisi struktur ini dengan alamat IP dari server dan nomor port yang sudah ditentukan.
+
+* Menghubungkan ke Server: Kode ini menggunakan connect untuk menghubungkan klien ke server yang sudah ditentukan. Jika koneksi berhasil, klien akan terhubung ke server.
+
+* Communication Loop: Setelah terhubung ke server, klien masuk ke dalam loop tak terbatas untuk berkomunikasi dengan server. Langkah-langkah dalam loop ini adalah:
+
+  * Membaca input dari pengguna (melalui fgets) dan mengirimkannya ke server menggunakan write.
+  * Menerima respons dari server menggunakan read dan mencetaknya ke layar.
+  * Loop akan berlanjut hingga klien menerima pesan "quit" dari server.
+  
+* Mengakhiri Koneksi: Jika server mengirim pesan "quit", klien akan keluar dari loop dan menutup koneksi ke server menggunakan close.
+
