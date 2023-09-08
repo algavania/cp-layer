@@ -1,8 +1,7 @@
-# TCP Flow di HTTP
-## Daftar Isi
+# Daftar Isi
 
+- [Daftar Isi](#daftar-isi)
 - [TCP Flow di HTTP](#tcp-flow-di-http)
-  - [Daftar Isi](#daftar-isi)
   - [Perbandingan](#perbandingan)
   - [TCP Flow pada HTTP 0.9, 1.0, dan 1.1](#tcp-flow-pada-http-09-10-dan-11)
     - [HTTP 0.9](#http-09)
@@ -32,8 +31,7 @@
     - [Kode Lengkap](#kode-lengkap-1)
     - [Penjelasan Kode](#penjelasan-kode-1)
 
-
-
+# TCP Flow di HTTP
 ## Perbandingan
 <br>
 <p align="center">
