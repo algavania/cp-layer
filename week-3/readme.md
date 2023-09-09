@@ -30,6 +30,9 @@
   - [File client.c](#file-clientc)
     - [Kode Lengkap](#kode-lengkap-1)
     - [Penjelasan Kode](#penjelasan-kode-1)
+    - [Screenshot Server](#screenshot-server)
+    - [Screenshot Client 1](#screenshot-client-1)
+    - [Screenshot Client 2](#screenshot-client-2)
 
 # TCP Flow di HTTP
 ## Perbandingan
@@ -336,3 +339,29 @@ Fungsi dari kode tersebut adalah untuk berkomunikasi dengan server melalui socke
   
 * Mengakhiri Koneksi: Jika server mengirim pesan "quit", klien akan keluar dari loop dan menutup koneksi ke server menggunakan close.
 
+### Screenshot Server
+<br>
+<p align="center">
+<img src="../assets/week-3/server.jpg" alt="Server">
+<br>
+<i>Server</i>
+</p>
+<br>
+
+### Screenshot Client 1
+<br>
+<p align="center">
+<img src="../assets/week-3/client1.jpg" alt="Client 1">
+<br>
+<i>Client 1</i>
+</p>
+<br>
+
+### Screenshot Client 2
+<br>
+<p align="center">
+<img src="../assets/week-3/client2.jpg" alt="Client 2">
+<br>
+<i>Client 2</i>
+</p>
+<br>
