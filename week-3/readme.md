@@ -33,6 +33,9 @@
     - [Screenshot Server](#screenshot-server)
     - [Screenshot Client 1](#screenshot-client-1)
     - [Screenshot Client 2](#screenshot-client-2)
+- [Analisis Lanjutan Socket Programming](#analisis-lanjutan-socket-programming)
+  - [Custom Character di client.c](#custom-character-di-clientc)
+  - [Percobaan](#percobaan)
 
 # TCP Flow di HTTP
 ## Perbandingan
@@ -365,3 +368,108 @@ Fungsi dari kode tersebut adalah untuk berkomunikasi dengan server melalui socke
 <i>Client 2</i>
 </p>
 <br>
+
+# Analisis Lanjutan Socket Programming
+Pada analisis ini, kita akan mengamati bagaimana data yang kita kirim diproses. Untuk memudahkan pengetesan, saya melakukan beberapa perubahan pada file client.c agar client bisa memasukkan berapa jumlah karakter yang akan diinputkan. Ini akan memudahkan kita menganalisis segmentasi packetnya.
+
+## Custom Character di client.c
+https://gist.github.com/algavania/3dd4234125a6d5feb7adfcd0bc51c45f
+
+## Percobaan
+Di sini kita akan mencoba mengirim 10000 karakter ke server.
+<br>
+<p align="center">
+<img src="../assets/week-3/socket1.jpg" alt="Percobaan 1">
+<br>
+<i>Percobaan 1</i>
+</p>
+<br>
+
+Karakter tersebut ditangkap oleh server.
+<br>
+<p align="center">
+<img src="../assets/week-3/socket2.jpg" alt="Percobaan 2">
+<br>
+<i>Percobaan 2</i>
+</p>
+<br>
+
+Ini adalah packet-packet yang ditangkap oleh Wireshark.
+<br>
+<p align="center">
+<img src="../assets/week-3/wireshark-socket.png" alt="Wireshark">
+<br>
+<i>Wireshark</i>
+</p>
+<br>
+
+Dari tangkapan Wireshark tersebut bisa diketahui bahwa dari sisi client melakukan PUSH atau PSH sebanyak 2x, sedangkan server melakukan 4x.
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 1448 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/client-1.png" alt="Client">
+<br>
+<i>Client</i>
+</p>
+<br>
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 1318 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/client-2.png" alt="Client">
+<br>
+<i>Client</i>
+</p>
+<br>
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 256 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/server-1.png" alt="Server">
+<br>
+<i>Server</i>
+</p>
+<br>
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 88 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/server-2.png" alt="Server">
+<br>
+<i>Server</i>
+</p>
+<br>
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 864 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/server-3.png" alt="Server">
+<br>
+<i>Server</i>
+</p>
+<br>
+
+Pada packet ini, terlihat bahwa data yang dibawa adalah 160 bytes.
+<br>
+<p align="center">
+<img src="../assets/week-3/server-4.png" alt="Server">
+<br>
+<i>Server</i>
+</p>
+<br>
+
+Dari hasil percobaan di atas, diketahui bahwa client dan server memiliki jumlah maksimum bytes yang bisa dibawa. Pada percobaan tim kami, client bisa membawa bytes yang lebih besar dibandingkan server, terbukti dengan jumlah segmentasi yang terjadi (di client terjadi 2x, di server 4x).
+
+Selain itu, kita juga bisa melihat bahwa maksimal bytes yang bisa dibawa client adalah 1448, artinya maksimumnya bytesnya adalah >= 1448 bytes. Begitu juga pada sisi server, maksimal bytes dari percobaan tersebut adalah 256 bytes, artinya maksimum bytesnya adalah >= 256 bytes.
+
+Adapun alasan mengapa segmen-segmen dapat membawa jumlah byte yang berbeda, yaitu:
+* Maksimum Segment Size (MSS): Setiap segmen TCP memiliki batasan maksimum dalam jumlah byte yang dapat diangkut, yang disebut MSS. Batasan ini dapat berbeda-beda tergantung pada beberapa faktor seperti MTU (Maximum Transmission Unit) pada jaringan fisik yang digunakan, konfigurasi perangkat jaringan, dan negosiasi MSS antara pengirim (client) dan penerima (server) selama proses awal koneksi. Karena nilai MSS bisa bervariasi, segmen-segmen yang dihasilkan dalam satu koneksi TCP dapat memiliki ukuran yang berbeda-beda.
+
+* Fragmentation: Selain MSS, faktor lain yang dapat mempengaruhi ukuran segmen adalah fragmentasi. Fragmentasi terjadi ketika sebuah segmen TCP yang besar harus dipecah-pecah menjadi potongan-potongan yang lebih kecil saat melewati jaringan yang memiliki batasan MTU yang lebih kecil. Setiap potongan ini adalah segmen yang berbeda dengan ukuran yang berbeda, dan penerima harus menerima dan menyusun kembali potongan-potongan ini untuk mendapatkan data lengkap.
+
+* Kehilangan Paket: Terkadang, dalam situasi jaringan yang tidak stabil atau penuh, segmen-segmen dapat hilang dalam perjalanan. Ketika segmen hilang, pengirim akan mengirim ulang segmen tersebut. Ini dapat menyebabkan adanya duplikasi segmen yang mengakibatkan beberapa segmen memiliki jumlah byte yang berbeda dalam rentang waktu tertentu.
+
+* Prioritasi: Dalam beberapa implementasi jaringan atau protokol, segmen-segmen yang memiliki prioritas yang berbeda dapat memiliki ukuran yang berbeda-beda. Misalnya, dalam QoS (Quality of Service), segmen-segmen dengan prioritas tinggi dapat memiliki ukuran yang lebih kecil untuk memastikan pengiriman yang cepat.
+
+Jadi, perbedaan dalam jumlah byte yang dibawa oleh segmen-segmen dalam proses segmentasi adalah hasil dari banyak faktor yang berpengaruh pada komunikasi jaringan, seperti pengaturan protokol, batasan fisik jaringan, dan kondisi jaringan saat itu.
