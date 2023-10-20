@@ -31,24 +31,24 @@ Pada gambar tersebut, kita mempunyai 1 router dan 2 switch di mana masing-masing
 Ini adalah konfigurasi dari Router dan PC:
 
 * Router2<br>
-FastEthernet 0/0: 192.168.1.1 255.255.255.0
-FastEthernet 1/0: 192.168.6.1 255.255.255.0
+- FastEthernet 0/0: 192.168.1.1 255.255.255.0
+- FastEthernet 1/0: 192.168.6.1 255.255.255.0
 
 * PC 0<br>
-Default Gateway: 192.168.1.1
-IP and Subnet: 192.168.1.2 255.255.255.0
+- Default Gateway: 192.168.1.1
+- IP and Subnet: 192.168.1.2 255.255.255.0
 
 * PC 1<br>
-Default Gateway: 192.168.1.1
-IP and Subnet: 192.168.1.3 255.255.255.0
+- Default Gateway: 192.168.1.1
+- IP and Subnet: 192.168.1.3 255.255.255.0
 
 * PC 2<br>
-Default Gateway: 192.168.6.1
-IP and Subnet: 192.168.6.2 255.255.255.0
+- Default Gateway: 192.168.6.1
+- IP and Subnet: 192.168.6.2 255.255.255.0
 
 * PC 3<br>
-Default Gateway: 192.168.6.1
-IP and Subnet: 192.168.6.3 255.255.255.0
+- Default Gateway: 192.168.6.1
+- IP and Subnet: 192.168.6.3 255.255.255.0
 
 Setelah semua dikonfigurasi, kita akan mencoba beberapa skenario:
 * PC 0 ping ke PC 1
