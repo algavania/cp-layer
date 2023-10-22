@@ -256,8 +256,8 @@ Pada IP tersebut, 8 bit pertama adalah bagian dari Network Address dan 24 bit te
 
 Kita kan akan membuat 6 subnet, jadi kita perlu menambahkan 3 bit ke netmask karena 2^3 = 8 (kita mencari nilai yang paling dekat dengan jumlah subnetnya).
 
-Netmask awal: 255.0.0.0 atau 11111111.00000000.00000000.00000000
-Netmask sesudah: 255.224.0.0 atau 11111111.11100000.00000000.00000000 (bertambah 3 bit).
+* Netmask awal: 255.0.0.0 atau 11111111.00000000.00000000.00000000
+* Netmask sesudah: 255.224.0.0 atau 11111111.11100000.00000000.00000000 (bertambah 3 bit).
 
 Hasilnya adalah: 12.0.0.0/11 dengan netmask 255.224.0.0.
 
