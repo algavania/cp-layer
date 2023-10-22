@@ -262,12 +262,12 @@ Kita kan akan membuat 6 subnet, jadi kita perlu menambahkan 3 bit ke netmask kar
 Hasilnya adalah: 12.0.0.0/11 dengan netmask 255.224.0.0.
 
 Lalu kita dapat membuat 6 subnet yang berbeda sebagai berikut:
-* Subnet 1: 12.0.0.0/11 (Range: 12.0.0.0)
-* Subnet 2: 12.32.0.0/11 (Range: 12.32.0.0)
-* Subnet 3: 12.64.0.0/11 (Range: 12.64.0.0)
-* Subnet 4: 12.96.0.0/11 (Range: 12.96.0.0)
-* Subnet 5: 12.128.0.0/11 (Range: 12.128.0.0)
-* Subnet 6: 12.160.0.0/11 (Range: 12.160.0.0)
+* Subnet 1: 12.0.0.0/11
+* Subnet 2: 12.32.0.0/11
+* Subnet 3: 12.64.0.0/11
+* Subnet 4: 12.96.0.0/11
+* Subnet 5: 12.128.0.0/11
+* Subnet 6: 12.160.0.0/11
 
 Nah karena sudah dapat hasil perhitungannya, kita bisa langsung membuatnya di Packet Tracer. Kita membutuhkan 1 router dan 6 switch di mana masing-masing switch terdapat 1 PC. Lalu kita akan menghubungkannya menggunakan kabel Copper Straight-Through.
 
@@ -294,5 +294,37 @@ Lalu kita kan mengonfigurasi IP di masing-masing PC:
 ![IP PC](../assets/week-9/pc6.png)
 
 Jangan lupa untuk set Default Gatewaynya.
+
+Lalu kita akan mencoba ping dari 1 PC ke PC lainnya.
+* PC 1
+
+![PC 1](../assets/week-9/pc1-1.png)
+![PC 1](../assets/week-9/pc1-2.png)
+
+* PC 2
+
+![PC 2](../assets/week-9/pc2-1.png)
+![PC 2](../assets/week-9/pc2-2.png)
+
+* PC 3
+
+![PC 3](../assets/week-9/pc3-1.png)
+![PC 3](../assets/week-9/pc3-2.png)
+
+* PC 4
+
+![PC 4](../assets/week-9/pc4-1.png)
+![PC 4](../assets/week-9/pc4-2.png)
+
+* PC 5
+
+![PC 5](../assets/week-9/pc5-1.png)
+![PC 5](../assets/week-9/pc5-2.png)
+
+* PC 6
+
+![PC 6](../assets/week-9/pc6-1.png)
+![PC 6](../assets/week-9/pc6-2.png)
+
 
 Dengan begitu, kita sudah berhasil membuat 6 subnet dari IP Public 12.0.0.0/8.
