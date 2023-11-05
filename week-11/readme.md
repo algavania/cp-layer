@@ -11,6 +11,10 @@
   - [**6. PC 1**](#6-pc-1)
   - [**7. PC 2**](#7-pc-2)
   - [**8. PC 3**](#8-pc-3)
+- [Ping antar PC di Winbox](#ping-antar-pc-di-winbox)
+- [Gambar Physical](#gambar-physical)
+- [Gambar Logical](#gambar-logical)
+- [Routing Table di Winbox](#routing-table-di-winbox)
 
 
 
@@ -145,3 +149,35 @@ Router PENS:
     IPv4 Address    : 192.168.2.3
     Subnet Mask     : 255.255.255.224
     Default Gateway : 192.168.2.1
+
+
+## Ping antar PC di Winbox
+
+![](../assets/week-10/winbox%20(17).png)
+
+![](../assets/week-10/winbox%20(18).png)
+
+![](../assets/week-10/winbox%20(19).png)
+
+![](../assets/week-10/winbox%20(20).png)
+
+![](../assets/week-10/winbox%20(21).png)
+
+![](../assets/week-10/winbox%20(22).png)
+
+![](../assets/week-10/winbox%20(23).png)
+
+![](../assets/week-10/winbox%20(24).png)
+
+## Gambar Physical
+
+![](../assets/week-11/physical.png)
+
+## Gambar Logical
+
+![](../assets/week-11/logical.png)
+
+## Routing Table di Winbox
+
+![](../assets/week-11/routing-table.png)
+
