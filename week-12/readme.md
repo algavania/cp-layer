@@ -24,6 +24,10 @@
       - [BGP (Border Gateway Protocol)](#bgp-border-gateway-protocol)
         - [Kelebihan](#kelebihan-5)
         - [Kekurangan](#kekurangan-5)
+  - [Traceroute 1.1.1.1 dan www.detik.com](#traceroute-1111-dan-wwwdetikcom)
+    - [1.1.1.1](#1111)
+    - [www.detik.com (103.49.221.211):](#wwwdetikcom-10349221211)
+    - [Analisis:](#analisis)
 
 
 
@@ -150,3 +154,60 @@ BGP merupakan “distance vector exterior gateway protocol” yang bekerja secar
 
 ##### Kekurangan
 1. Sangat terbatas dalam mempergunakan topologi jaringan
+
+## Traceroute 1.1.1.1 dan www.detik.com
+![](../assets/week-12/traceroute.png)
+
+### 1.1.1.1
+
+1. 192.168.1.1 (Gateway):
+
+Langkah pertama menunjukkan local gateway (192.168.1.1) dengan waktu tempuh yang singkat, menunjukkan jarak yang dekat.
+
+2. 10.252.108.212:
+
+Langkah kedua menunjukkan alamat jaringan internal (10.252.108.212) dengan waktu tempuh yang rendah.
+
+3. core-router.pens.ac.id (202.9.85.1) dan edge-router.pens.ac.id (10.252.0.1):
+
+Langkah 5 dan 6 menunjukkan router di PENS (Politeknik Elektronika Negeri Surabaya) dengan waktu tempuh yang sedang.
+
+4. 114-4-97-169.resources.indosat.com (114.4.97.169) dan 114-0-78-196.resources.indosat.com (114.0.78.196):
+
+Langkah 6 dan 7 menunjukkan node jaringan milik Indosat, perusahaan telekomunikasi Indonesia.
+
+5. 13335.sgw.equinix.com (27.111.228.132):
+
+Langkah 7 menunjukkan node di Equinix Singapore dengan waktu tempuh yang lebih tinggi.
+
+6. 172.70.144.3 dan 172.70.146.3:
+
+Langkah 10 dan 11 menunjukkan server DNS Cloudflare (1.1.1.1) dengan waktu tempuh.
+
+### www.detik.com (103.49.221.211):
+1. 192.168.1.1 (Gateway) dan 10.252.108.212:
+
+Langkah 1 dan 2 mirip dengan penelusuran sebelumnya.
+
+2. core-router.pens.ac.id (202.9.85.1) dan edge-router.pens.ac.id (10.252.0.1):
+
+Langkah 5 dan 6 menunjukkan router di PENS dengan waktu tempuh.
+
+3. 123.108.8.172:
+
+Langkah 7 dan 8 menunjukkan node dengan alamat IP 123.108.8.172.
+
+4. 124.195.38.7:
+
+Langkah 9 dan 10 menunjukkan node milik Indosat dengan waktu tempuh.
+
+5. s211-cast-211-221-49-103.detik.com (103.49.221.211):
+
+Langkah terakhir menunjukkan alamat IP tujuan untuk www.detik.com.
+
+### Analisis:
+Kedua traceroute mengikuti jalur yang mirip melalui jaringan lokal, router PENS, node Indosat, dan akhirnya mencapai tujuan masing-masing.
+Waktu tempuh berbeda di setiap langkah, dengan beberapa node menunjukkan latensi yang lebih tinggi, yang normal dalam penyebaran internet.
+Trace route memberikan wawasan tentang infrastruktur jaringan dan titik potensial keterlambatan dalam mencapai tujuan.
+
+
