@@ -173,6 +173,9 @@ Router PENS:
 
 ![](../assets/week-11/physical.png)
 
+![](../assets/week-11/physical-detail.png)
+
+
 ## Gambar Logical
 
 ![](../assets/week-11/logical.png)
