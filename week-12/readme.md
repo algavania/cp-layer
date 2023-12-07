@@ -4,6 +4,7 @@
 
 - [Week 12](#week-12)
   - [Table of Contents](#table-of-contents)
+  - [Dosen Pengampu](#dosen-pengampu)
   - [Dynamic Routing](#dynamic-routing)
     - [Pengertian](#pengertian)
     - [Kelebihan](#kelebihan)
@@ -29,6 +30,8 @@
     - [www.detik.com (103.49.221.211):](#wwwdetikcom-10349221211)
     - [Analisis:](#analisis)
 
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 
 ## Dynamic Routing

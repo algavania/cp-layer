@@ -3,12 +3,16 @@
 
 - [Analisis di Wireshark](#analisis-di-wireshark)
   - [Daftar Isi](#daftar-isi)
+  - [Dosen Pengampu](#dosen-pengampu)
   - [Gambar Connection Termination Tanpa Data](#gambar-connection-termination-tanpa-data)
   - [Analisis Flow Graph dari Request HTTP](#analisis-flow-graph-dari-request-http)
   - [Penjelasan Packet Counter](#penjelasan-packet-counter)
     - [Field di Packet Counter](#field-di-packet-counter)
   - [Throughput](#throughput)
   - [Mengambil Gambar di http\_witp\_jpegs.cap](#mengambil-gambar-di-http_witp_jpegscap)
+
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Gambar Connection Termination Tanpa Data
 <br>

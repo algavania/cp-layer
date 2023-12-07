@@ -1,6 +1,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
+- [Dosen Pengampu](#dosen-pengampu)
 - [Switch vs Hub](#switch-vs-hub)
   - [Switch](#switch)
     - [Skenario 1: PC 0 Ping ke PC 1](#skenario-1-pc-0-ping-ke-pc-1)
@@ -21,6 +22,8 @@
     - [Hub](#hub-1)
 - [Subnetting](#subnetting)
 
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Switch vs Hub
 

@@ -3,10 +3,12 @@
 
 - [Ping dan TraceRoute](#ping-dan-traceroute)
   - [Table of Contents](#table-of-contents)
+  - [Dosen Pengampu](#dosen-pengampu)
   - [Penjelasan TraceRoute](#penjelasan-traceroute)
   - [Ping dan TraceRoute](#ping-dan-traceroute-1)
 
-
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Penjelasan TraceRoute
 tracert (atau traceroute dalam lingkungan sistem operasi Linux) adalah perintah yang digunakan untuk melacak rute yang diambil oleh paket data saat mencoba mencapai tujuan tertentu di jaringan komputer. Saat kita menjalankan tracert di Command Prompt (CMD) di Windows, hasilnya akan menampilkan beberapa kolom yang memberikan informasi tentang rute yang diambil oleh paket data. Berikut adalah penjelasan fungsi dari tiap-tiap kolom pada output tracert:

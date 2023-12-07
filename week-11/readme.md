@@ -1,6 +1,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
+- [Dosen Pengampu](#dosen-pengampu)
 - [Routing](#routing)
 - [Subnetting](#subnetting)
   - [**1. Router 0**](#1-router-0)
@@ -16,7 +17,8 @@
 - [Gambar Logical](#gambar-logical)
 - [Routing Table di Winbox](#routing-table-di-winbox)
 
-
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Routing
 

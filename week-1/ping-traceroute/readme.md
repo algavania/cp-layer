@@ -1,3 +1,6 @@
+# Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
+
 # Ping dan Traceroute
 ## Ping
 Perintah "ping" di terminal adalah perintah yang digunakan untuk menguji konektivitas jaringan antara komputer kita (host pengirim) dengan perangkat atau host lain di jaringan (host penerima). Ini adalah perintah yang umum digunakan untuk mengukur latensi (waktu respons) antara dua perangkat dan memeriksa apakah perangkat target aktif atau tidak. Di bawah ini adalah penjelasan lebih lanjut tentang perintah "ping" di terminal:

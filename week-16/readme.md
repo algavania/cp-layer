@@ -3,13 +3,15 @@
 
 - [Week 16](#week-16)
   - [Table of Contents](#table-of-contents)
+  - [Dosen Pengampu](#dosen-pengampu)
   - [Cara Kerja DNS dan Mail Server](#cara-kerja-dns-dan-mail-server)
     - [DNS](#dns)
     - [Mail Server](#mail-server)
     - [Arsitektur Jaringan Umum di Kampus](#arsitektur-jaringan-umum-di-kampus)
       - [Campus Network](#campus-network)
 
-
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Cara Kerja DNS dan Mail Server
 ### DNS

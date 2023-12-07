@@ -1,3 +1,6 @@
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
+
 ### Pendahuluan
 Di sini kita akan menganalisa http.cap, telnet-cooked.cap, dan dns.cap yang kita dapatkan dari https://wiki.wireshark.org/SampleCaptures menggunakan Wireshark.
 

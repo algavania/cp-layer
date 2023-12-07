@@ -1,6 +1,7 @@
 ## Daftar Isi
 
 - [Daftar Isi](#daftar-isi)
+- [Dosen Pengampu](#dosen-pengampu)
 - [Connection Termination](#connection-termination)
 - [Letak Half-Closed pada Kode](#letak-half-closed-pada-kode)
 - [Telnet, SSH, dan DNS](#telnet-ssh-dan-dns)
@@ -16,7 +17,8 @@
     - [Penjelasan](#penjelasan-2)
     - [Karateristik](#karateristik-2)
 
-
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Connection Termination
 Proses terminasi koneksi pada kode sebelumnya dapat diklasifikasikan sebagai half-closed. Hal ini disebabkan oleh perilaku di kedua sisi, yaitu client dan server, yang memungkinkan satu sisi untuk menghentikan pengiriman data sementara yang lainnya dapat tetap menerima data.

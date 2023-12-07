@@ -3,10 +3,13 @@
 
 - [Cisco Packet Tracer](#cisco-packet-tracer)
   - [Table of Contents](#table-of-contents)
+  - [Dosen Pengampu](#dosen-pengampu)
   - [Desain](#desain)
   - [Langkah-langkah](#langkah-langkah)
 
 
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Desain
 ![Desain](../assets/week-7/cisco.jpg)

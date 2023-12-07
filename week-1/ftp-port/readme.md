@@ -1,3 +1,6 @@
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
+
 ### Kenapa FTP bisa menggunakan UDP atau TCP?
 FTP (File Transfer Protocol) pada dasarnya menggunakan TCP (Transmission Control Protocol) untuk transfer datanya. Namun, FTP juga teoretis dapat menggunakan UDP (User Datagram Protocol), tetapi hal ini jarang terjadi dan bukan praktik umum.
 

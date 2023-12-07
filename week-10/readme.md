@@ -1,6 +1,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
+- [Dosen Pengampu](#dosen-pengampu)
 - [Physical Design](#physical-design)
   - [**1. Router 0**](#1-router-0)
   - [**2. Router 1**](#2-router-1)
@@ -9,7 +10,8 @@
   - [**5. PC 2**](#5-pc-2)
 - [Winbox](#winbox)
 
-
+## Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 ## Physical Design
 ![Switch](../assets/week-10/cisco-mikrotik.png)

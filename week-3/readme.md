@@ -1,6 +1,7 @@
 # Daftar Isi
 
 - [Daftar Isi](#daftar-isi)
+- [Dosen Pengampu](#dosen-pengampu)
 - [TCP Flow di HTTP](#tcp-flow-di-http)
   - [Perbandingan](#perbandingan)
   - [TCP Flow pada HTTP 0.9, 1.0, dan 1.1](#tcp-flow-pada-http-09-10-dan-11)
@@ -36,6 +37,9 @@
 - [Analisis Lanjutan Socket Programming](#analisis-lanjutan-socket-programming)
   - [Custom Character di client.c](#custom-character-di-clientc)
   - [Percobaan](#percobaan)
+
+# Dosen Pengampu
+Tugas ini merupakan tugas mata kuliah Konsep Jaringan yang diampu oleh Dr. Ferry Astika Saputra ST, M.Sc ([@ferryastika](https://github.com/ferryastika)).
 
 # TCP Flow di HTTP
 ## Perbandingan
